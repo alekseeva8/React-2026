@@ -22,6 +22,12 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        // Обрабатываем ТОЛЬКО CSS из node_modules (Kendo)
+        include: /node_modules\/@progress/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },

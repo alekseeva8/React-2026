@@ -4,31 +4,36 @@
  */
 
 import React from "react";
+import * as styles from './styles';
+import { Button } from '@progress/kendo-react-buttons';
+
 
 const Counter = ({ count, onIncrement, onDecrement, onReset }) => {
     return (
         <>
-            <div>
-                <p>Counter state: {count}</p>
-                <Button onClick={onIncrement}>
-                    Increment
-                </Button>
-                <Button onClick={onDecrement}>
-                    Decrement
-                </Button>
-                <Button onClick={onReset}>
-                    Reset
-                </Button>
+            <div style={styles.mainContainer}>
+                <p style={styles.counterText}>
+                    Counter state: {count}
+                </p> 
+                <div style={styles.buttonsContainer}>
+                    <Button
+                        onClick={onIncrement}
+                        {...styles.incrementButton}>
+                        Increment
+                    </Button>
+                    <Button
+                        onClick={onDecrement}
+                        {...styles.decrementButton}>
+                        Decrement
+                    </Button>
+                    <Button
+                        onClick={onReset}
+                        {...styles.resetButton}>
+                        Reset
+                    </Button>
+                </div>
             </div>
         </>
-    );
-}
-
-const Button = ({ onClick, children }) => {
-    return (
-        <button className="myButton" onClick={onClick}>
-            {children}
-        </button>
     );
 }
 
