@@ -23,5 +23,11 @@ export default class CounterContainer extends Component {
             onReset: this.handleReset
         };
         return <Counter {...props}/>;
+        // return <Counter
+        //     count={"да"}
+        //     onIncrement={this.handleIncrement}
+        //     onDecrement={this.handleDecrement}
+        //     onReset={this.handleReset}
+        // />
     }
 }
