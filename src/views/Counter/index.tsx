@@ -4,12 +4,17 @@
  */
 
 import React from "react";
-import PropTypes from 'prop-types';
 import * as styles from './styles';
 import { Button } from '@progress/kendo-react-buttons';
 
+export interface CounterProps {
+    count: number;
+    onIncrement: () => void;
+    onDecrement: () => void;
+    onReset: () => void;
+}
 
-const Counter = ({ count, onIncrement, onDecrement, onReset }) => {
+const Counter = ({ count, onIncrement, onDecrement, onReset }: CounterProps) => {
     return (
         <>
             <div style={styles.mainContainer}>
@@ -37,12 +42,5 @@ const Counter = ({ count, onIncrement, onDecrement, onReset }) => {
         </>
     );
 }
-
-Counter.propTypes = {
-  count: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired,
-  onReset: PropTypes.func.isRequired,
-};
 
 export default Counter;
