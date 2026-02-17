@@ -15,9 +15,10 @@ export interface CounterProps {
 }
 
 const Counter = ({ count, onIncrement, onDecrement, onReset }: CounterProps) => {
+
     return (
         <>
-            <div style={styles.mainContainer}>
+            <div style={styles.counterContainer}>
                 <p style={styles.counterText}>
                     Counter state: {count}
                 </p> 
