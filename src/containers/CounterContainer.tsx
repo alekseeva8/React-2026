@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
 import Counter, { CounterProps } from '../views/Counter/index';
-import { Button } from '@progress/kendo-react-buttons';
-import * as styles from '../views/Counter/styles';
+import CounterController, { CounterControllerProps } from '../views/CounterController/index';
 
 const initialCounters = [{ id: crypto.randomUUID(), count: 0 }];
 
@@ -63,35 +62,15 @@ const CounterContainer = () => {
         return (<li key={counter.id}><Counter {...props} /></li>);
     });
 
-    return (
-        <>
-            <div style={styles.mainContainer}>
-                <p style={styles.counterControllerText}>
-                    Counter controller
-                </p>
-                <div style={styles.buttonsContainer}>
-                    <Button
-                        onClick={handleAddCounter}
-                        {...styles.addCounterButton}>
-                        Add counter
-                    </Button>
-                    <Button
-                        onClick={handleDeleteCounter}
-                        {...styles.deleteCounterButton}>
-                        Delete counter
-                    </Button>
-                    <Button
-                        onClick={handleResetCounters}
-                        {...styles.resetCountersButton}>
-                        Reset counter
-                    </Button>
-                </div>
-                <ul style={styles.listContainer}>
-                    {countersItems}
-                </ul>
-            </div>
-        </>
-    )
+    const countersProps: CounterControllerProps = {
+        countersItems: countersItems,
+        onAddCounter: handleAddCounter,
+        onDeleteCounter: handleDeleteCounter,
+        onResetCounters: handleResetCounters
+    }
+
+    return (<CounterController {...countersProps} />);
+    
 }
 
 export default CounterContainer;

@@ -1,21 +1,19 @@
 
-import React, { useEffect } from "react";
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { TabStrip, TabStripSelectEventArguments, TabStripTab } from '@progress/kendo-react-layout';
-import * as styles from '../views/Home/styles';
+import React, {useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { TabStripSelectEventArguments } from '@progress/kendo-react-layout';
+import HomeView, {HomeProps} from "../views/Home";
 
 const HomeContainer = () => {
     const pages = [{ title: 'О нас', path: '/about' }, { title: 'Счетчики', path: '/counters' }];
 
-    const [selected, setSelected] = React.useState<number | undefined>(undefined);
+    const [selected, setSelected] = useState(-1);
 
     //для синхронизации выбранного таба и url (при клике на таб)
     const navigate = useNavigate();
     const handleSelect = (e: TabStripSelectEventArguments) => {
-        if (e.selected !== null && e.selected !== undefined) {
-            navigate(pages[e.selected].path);
-            setSelected(e.selected);
-        }
+        navigate(pages[e.selected].path);
+        setSelected(e.selected);
     };
 
     //для синхронизации выбранного таба и url (при ручном вводе url)
@@ -26,26 +24,16 @@ const HomeContainer = () => {
         if (!isValidPath && location.pathname !== '/') {
             navigate('/404');
         }
-        setSelected(isValidPath ? index : undefined);
+        setSelected(isValidPath ? index : -1);
     }, [location.pathname]);
 
-    return (
-        <TabStrip selected={selected} onSelect={handleSelect}>
-            {pages.map((element, index) => {
-                return (
-                    <TabStripTab
-                        key={index}
-                        title={
-                            <span style={styles.getTabStyle(index === selected)}>
-                                {element.title}
-                            </span>
-                        } >
-                        <Outlet />
-                    </TabStripTab>
-                );
-            })}
-        </TabStrip>
-    );
+    const props: HomeProps = {
+        pages: pages,
+        selectedIndex: selected,
+        onSelect: handleSelect
+    }
+
+    return (< HomeView {...props} />);
 }
 
 export default HomeContainer;
