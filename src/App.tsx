@@ -13,6 +13,7 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomeContainer />} >
+                    <Route index element={null} />
                     <Route path="about" element={<AboutContainer />} />
                     <Route path="counters" element={<CounterContainer />} />
                 </Route>

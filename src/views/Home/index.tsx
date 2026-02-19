@@ -10,7 +10,7 @@ export interface Page {
 
 export interface HomeProps {
     pages: Page[];
-    selectedIndex: number,
+    selectedIndex: number;
     onSelect: (e: TabStripSelectEventArguments) => void;
 }
 
@@ -18,7 +18,7 @@ const HomeView = ({pages, selectedIndex, onSelect} : HomeProps) => {
 
     return (
         <>
-        <TabStrip selected={selectedIndex} onSelect={onSelect}>
+        <TabStrip selected={selectedIndex>= 0 ? selectedIndex : undefined} onSelect={onSelect}>
             {pages.map((element, index) => {
                 return (
                     <TabStripTab
