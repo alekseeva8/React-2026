@@ -41,7 +41,7 @@ export const counterText: CSSProperties = {
   marginBottom: "4%"
 };
 
-//properties for KendoReact elements
+//KendoReact buttons
 export const incrementButton = {
   themeColor: "info",
   fillMode: "solid",
@@ -81,3 +81,5 @@ export const resetCountersButton = {
   rounded: "large",
   size: "large"
 } satisfies Omit<ButtonProps, "onClick">;
+
+

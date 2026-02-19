@@ -14,7 +14,10 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
-    hot: true
+    hot: true,
+      historyApiFallback: {
+      disableDotRule: true
+    }
   },
   module: {
     rules: [
@@ -25,10 +28,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        // Обрабатываем ТОЛЬКО CSS из node_modules (Kendo)
-        include: /node_modules\/@progress/,
         use: ['style-loader', 'css-loader']
       }
+
+
     ]
   },
   plugins: [
