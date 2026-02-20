@@ -6,7 +6,7 @@ import AboutView from "../views/About/index";
 const AboutContainer = () => {
 
     return (
-       <AboutView />
+        <AboutView />
     );
 }
 

@@ -70,7 +70,7 @@ const CounterContainer = () => {
     }
 
     return (<CounterController {...countersProps} />);
-    
+
 }
 
 export default CounterContainer;

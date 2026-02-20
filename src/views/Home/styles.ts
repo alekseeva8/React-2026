@@ -1,7 +1,6 @@
 
 import { CSSProperties } from "react";
 
-// Стили для табов
 export const tabBase: CSSProperties = {
   fontWeight: 600,
   padding: "8px 24px"
@@ -20,6 +19,6 @@ export const tabSelected: CSSProperties = {
   borderRadius: "5px"
 };
 
-export const getTabStyle = (isSelected: boolean): CSSProperties => 
+export const getTabStyle = (isSelected: boolean): CSSProperties =>
   isSelected ? tabSelected : tabNotSelected;
 

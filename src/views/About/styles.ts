@@ -3,7 +3,6 @@ import { CSSProperties } from "react";
 export const mainContainer: CSSProperties = {
   padding: "1%",
   fontFamily: "'Segoe UI', system-ui, sans-serif",
-  
 };
 
 export const heading: CSSProperties = {

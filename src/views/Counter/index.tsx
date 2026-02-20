@@ -7,7 +7,7 @@ import React from "react";
 import * as styles from './styles';
 import { Button } from '@progress/kendo-react-buttons';
 
-export interface CounterProps {
+export type CounterProps = {
     count: number;
     onIncrement: () => void;
     onDecrement: () => void;
@@ -21,7 +21,7 @@ const Counter = ({ count, onIncrement, onDecrement, onReset }: CounterProps) => 
             <div style={styles.counterContainer}>
                 <p style={styles.counterText}>
                     Counter state: {count}
-                </p> 
+                </p>
                 <div style={styles.buttonsContainer}>
                     <Button
                         onClick={onIncrement}

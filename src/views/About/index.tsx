@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from './styles';
-import * as data from './data';
+import * as data from '../../shared/constants/index';
 
 const AboutView = () => {
 
@@ -10,18 +10,9 @@ const AboutView = () => {
                 <p style={styles.heading}>
                     ИНТЕРМЕХ
                 </p>
-                <p style={styles.text}>
-                    {data.text1}
-                </p>
-                <p style={styles.text}>
-                    {data.text2}
-                </p>
-                <p style={styles.text}>
-                    {data.text3}
-                </p>
-                <p style={styles.text}>
-                    {data.text4}
-                </p>
+                {data.companyInfo.map((text, index) => {
+                    return (<p key={index} style={styles.text}>{text}</p>)
+                })}
             </div>
         </>
     );

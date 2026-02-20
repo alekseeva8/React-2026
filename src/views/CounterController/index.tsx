@@ -4,7 +4,7 @@ import React from "react";
 import * as styles from '../Counter/styles';
 import { Button } from '@progress/kendo-react-buttons';
 
-export interface CounterControllerProps {
+export type CounterControllerProps = {
     countersItems: React.ReactElement[];
     onAddCounter: () => void;
     onDeleteCounter: () => void;

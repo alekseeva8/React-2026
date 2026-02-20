@@ -3,36 +3,36 @@ import { Outlet } from "react-router-dom";
 import { TabStrip, TabStripSelectEventArguments, TabStripTab } from '@progress/kendo-react-layout';
 import * as styles from './styles';
 
-export interface Page {
-  title: string;
-  path: string;
+export type Page = {
+    title: string;
+    path: string;
 }
 
-export interface HomeProps {
+export type HomeProps = {
     pages: Page[];
     selectedIndex: number;
     onSelect: (e: TabStripSelectEventArguments) => void;
 }
 
-const HomeView = ({pages, selectedIndex, onSelect} : HomeProps) => {
+const HomeView = ({ pages, selectedIndex, onSelect }: HomeProps) => {
 
     return (
         <>
-        <TabStrip selected={selectedIndex>= 0 ? selectedIndex : undefined} onSelect={onSelect}>
-            {pages.map((element, index) => {
-                return (
-                    <TabStripTab
-                        key={index}
-                        title={
-                            <span style={styles.getTabStyle(index === selectedIndex)}>
-                                {element.title}
-                            </span>
-                        } >
-                        <Outlet />
-                    </TabStripTab>
-                );
-            })}
-        </TabStrip>
+            <TabStrip selected={selectedIndex >= 0 ? selectedIndex : undefined} onSelect={onSelect} size={"large"}>
+                {pages.map((element, index) => {
+                    return (
+                        <TabStripTab
+                            key={index}
+                            title={
+                                <span style={styles.getTabStyle(index === selectedIndex)}>
+                                    {element.title}
+                                </span>
+                            } >
+                            <Outlet />
+                        </TabStripTab>
+                    );
+                })}
+            </TabStrip>
         </>
     );
 }

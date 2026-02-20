@@ -47,14 +47,14 @@ export const incrementButton = {
   fillMode: "solid",
   rounded: "large",
   icon: "plus-outline"
-} satisfies Omit<ButtonProps, "onClick">; 
+} satisfies Omit<ButtonProps, "onClick">;
 
 export const decrementButton = {
   themeColor: "info",
   fillMode: "solid",
   rounded: "large",
   icon: "minus-outline"
-} satisfies Omit<ButtonProps, "onClick">; 
+} satisfies Omit<ButtonProps, "onClick">;
 
 export const resetButton = {
   fillMode: "outline",
@@ -67,14 +67,14 @@ export const addCounterButton = {
   fillMode: "solid",
   rounded: "large",
   size: "large"
-} satisfies Omit<ButtonProps, "onClick">; 
+} satisfies Omit<ButtonProps, "onClick">;
 
 export const deleteCounterButton = {
   themeColor: "success",
   fillMode: "solid",
   rounded: "large",
   size: "large"
-} satisfies Omit<ButtonProps, "onClick">; 
+} satisfies Omit<ButtonProps, "onClick">;
 
 export const resetCountersButton = {
   fillMode: "outline",

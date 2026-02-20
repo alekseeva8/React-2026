@@ -9,7 +9,7 @@ const ErrorView = () => {
             <div style={styles.mainContainer}>
                 <p style={styles.errorText}>
                     Error 404 - страница не найдена
-                </p> 
+                </p>
             </div>
         </>
     );

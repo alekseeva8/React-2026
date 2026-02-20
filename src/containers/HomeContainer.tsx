@@ -1,7 +1,7 @@
 
 import { useNavigate, useLocation } from "react-router-dom";
 import { TabStripSelectEventArguments } from '@progress/kendo-react-layout';
-import HomeView, {HomeProps} from "../views/Home";
+import HomeView, { HomeProps } from "../views/Home";
 
 
 const HomeContainer = () => {
