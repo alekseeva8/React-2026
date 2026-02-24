@@ -18,7 +18,7 @@ const HomeView = ({ pages, selectedIndex, onSelect }: HomeProps) => {
 
     return (
         <>
-            <TabStrip selected={selectedIndex >= 0 ? selectedIndex : undefined} onSelect={onSelect} size={"large"}>
+            <TabStrip selected={selectedIndex >= 0 ? selectedIndex : undefined} onSelect={onSelect} style={styles.tabStrip}>
                 {pages.map((element, index) => {
                     return (
                         <TabStripTab

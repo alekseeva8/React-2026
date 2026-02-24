@@ -1,6 +1,10 @@
 
 import { CSSProperties } from "react";
 
+export const tabStrip: CSSProperties = {
+  width: "100%"
+}
+
 export const tabBase: CSSProperties = {
   fontWeight: 600,
   padding: "8px 24px"

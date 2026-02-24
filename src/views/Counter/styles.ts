@@ -6,10 +6,11 @@ import { ButtonProps } from '@progress/kendo-react-buttons';
 export const mainContainer: CSSProperties = {
   padding: "1%",
   fontFamily: "'Segoe UI', system-ui, sans-serif",
+  width: "30vw"
 };
 
 export const counterContainer: CSSProperties = {
-  width: "25%",
+  width: "95%",
   border: "1px solid blue",
   padding: "1%",
   marginBottom: "1%",
@@ -18,7 +19,7 @@ export const counterContainer: CSSProperties = {
 
 export const buttonsContainer: CSSProperties = {
   display: "flex",
-  gap: "0.8%"
+  gap: "0.8%",
 };
 
 export const listContainer: CSSProperties = {
@@ -66,20 +67,20 @@ export const addCounterButton = {
   themeColor: "success",
   fillMode: "solid",
   rounded: "large",
-  size: "large"
+
 } satisfies Omit<ButtonProps, "onClick">;
 
 export const deleteCounterButton = {
   themeColor: "success",
   fillMode: "solid",
   rounded: "large",
-  size: "large"
+
 } satisfies Omit<ButtonProps, "onClick">;
 
 export const resetCountersButton = {
   fillMode: "outline",
   rounded: "large",
-  size: "large"
+
 } satisfies Omit<ButtonProps, "onClick">;
 
 

@@ -5,7 +5,7 @@ import HomeView, { HomeProps } from "../views/Home";
 
 
 const HomeContainer = () => {
-    const pages = [{ title: 'О нас', path: '/about' }, { title: 'Счетчики', path: '/counters' }];
+    const pages = [{ title: 'О нас', path: '/about' }, { title: 'Счетчики', path: '/counters' }, { title: 'Войти', path: '/login' }];
 
     const location = useLocation();
     const selectedIndex = pages.findIndex(page => page.path === location.pathname);
