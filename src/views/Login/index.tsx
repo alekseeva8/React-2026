@@ -16,7 +16,7 @@ export type LoginProps = {
     user: User,
     onEmailChanged: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onPasswordChanged: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    onLogin: () => void,
+    onLogin: (e: React.SubmitEvent<HTMLFormElement>) => void,
     emailStatus: InputStatus,
     passwordStatus: InputStatus,
 }

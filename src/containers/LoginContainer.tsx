@@ -33,7 +33,8 @@ const LoginContainer = () => {
         setPasswordStatus({ valid: isValid, errorDisabled: false });
     };
 
-    const handleLogin = () => {
+    const handleLogin = (e: React.SubmitEvent<HTMLFormElement>) => {
+        e.preventDefault();
         console.log(`Email ${user.email}; Password ${user.password}`)
         setUser(initialUserState);
     };
