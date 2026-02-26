@@ -1,31 +1,24 @@
 import React from "react";
 import * as styles from './styles';
 import { Button } from '@progress/kendo-react-buttons';
+import * as functions from '../../shared/functions/index';
 
-type User = {
-    email: string,
-    password: string
-}
-
-type InputStatus = {
-    valid: boolean,
-    errorDisabled: boolean
-}
+export type LoginForm = { values: { email: string, password: string }, touched: { email: boolean, password: boolean } };
 
 export type LoginProps = {
-    user: User,
+    loginForm: LoginForm,
     onEmailChanged: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onPasswordChanged: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onLogin: (e: React.SubmitEvent<HTMLFormElement>) => void,
-    emailStatus: InputStatus,
-    passwordStatus: InputStatus,
 }
 
-const LoginView = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStatus, passwordStatus }: LoginProps) => {
+const LoginView = ({ loginForm, onEmailChanged, onPasswordChanged, onLogin }: LoginProps) => {
 
-    const isEmailErrorShown = !emailStatus.valid && !emailStatus.errorDisabled;
-    const isPasswordErrorShown = !passwordStatus.valid && !passwordStatus.errorDisabled;
-    const isFormValid = emailStatus.valid && passwordStatus.valid;
+    const isValidEmail = functions.isValidEmail(loginForm.values.email);
+    const isValidPassword = functions.isValidPassword(loginForm.values.password);
+    const isFormValid = isValidEmail && isValidPassword;
+    const isEmailErrorShown = !isValidEmail && loginForm.touched.email;
+    const isPasswordErrorShown = !isValidPassword && loginForm.touched.password;
 
     return (
         <>
@@ -33,14 +26,14 @@ const LoginView = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStat
                 <form onSubmit={onLogin}>
                     <div style={styles.inputContainer}>
                         <label htmlFor="email">Ваш email:</label>
-                        <input type="email" id="email" onChange={onEmailChanged} />
+                        <input type="email" id="email" value={loginForm.values.email} onChange={onEmailChanged} />
                         <p style={styles.getErrorStyle(isEmailErrorShown)}>
                             Некорректный email
                         </p>
                     </div>
                     <div style={styles.inputContainer}>
                         <label htmlFor="password">Пароль:</label>
-                        <input type="text" id="password" onChange={onPasswordChanged} />
+                        <input type="text" id="password" value={loginForm.values.password} onChange={onPasswordChanged} />
                         <p style={styles.getErrorStyle(isPasswordErrorShown)}>
                             Минимум 6 символов
                         </p>
@@ -54,10 +47,10 @@ const LoginView = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStat
                 </form>
 
                 <p>
-                    Почта: {user.email}
+                    Почта: {loginForm.values.email}
                 </p>
                 <p>
-                    Пароль: {user.password}
+                    Пароль: {loginForm.values.password}
                 </p>
             </div>
         </>

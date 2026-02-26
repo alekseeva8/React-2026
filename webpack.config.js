@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js",
+    publicPath: "/",
     clean: true
   },
   resolve: {
@@ -15,9 +16,7 @@ module.exports = {
     port: 3000,
     open: true,
     hot: true,
-      historyApiFallback: {
-      disableDotRule: true
-    }
+    historyApiFallback: true
   },
   module: {
     rules: [

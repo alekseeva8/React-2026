@@ -7,6 +7,8 @@ import AboutContainer from './containers/AboutContainer';
 import CounterContainer from "./containers/CounterContainer";
 import ErrorContainer from './containers/ErrorContainer';
 import LoginContainer from './containers/LoginContainer';
+import ReduxLoginContainer from './containers/ReduxLoginContainer';
+import LoginSuccessContainer from './containers/LoginSuccessContainer';
 
 export default function App() {
     return (
@@ -17,9 +19,11 @@ export default function App() {
                     <Route path="about" element={<AboutContainer />} />
                     <Route path="counters" element={<CounterContainer />} />
                     <Route path="login" element={<LoginContainer />} />
+                    <Route path="login-redux" element={<ReduxLoginContainer />} />
                 </Route>
                 <Route path="/404" element={<ErrorContainer />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
+                <Route path="/login-redux/success" element={<LoginSuccessContainer />} />
             </Routes>
         </BrowserRouter>
     );
