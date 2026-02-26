@@ -21,7 +21,7 @@ export type LoginProps = {
     passwordStatus: InputStatus,
 }
 
-const LoginForm = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStatus, passwordStatus }: LoginProps) => {
+const LoginView = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStatus, passwordStatus }: LoginProps) => {
 
     const isEmailErrorShown = !emailStatus.valid && !emailStatus.errorDisabled;
     const isPasswordErrorShown = !passwordStatus.valid && !passwordStatus.errorDisabled;
@@ -64,4 +64,4 @@ const LoginForm = ({ user, onEmailChanged, onPasswordChanged, onLogin, emailStat
     );
 }
 
-export default LoginForm;
+export default LoginView;

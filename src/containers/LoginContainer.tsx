@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginForm, { LoginProps } from "../views/Login/index";
+import LoginView, { LoginProps } from "../views/Login/index";
 
 const isValidEmail = (value: string) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,7 +49,7 @@ const LoginContainer = () => {
     }
 
     return (
-        <LoginForm {...props} />
+        <LoginView {...props} />
     );
 }
 
