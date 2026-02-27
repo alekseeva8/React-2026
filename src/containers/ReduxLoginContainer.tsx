@@ -1,4 +1,4 @@
-import { updateEmail, updatePassword, reset } from '../features/login-redux/loginSlice';
+import { updateEmail, updatePassword } from '../features/login-redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import LoginView, { LoginProps } from "../views/Login/index";
 import { useNavigate } from "react-router-dom";

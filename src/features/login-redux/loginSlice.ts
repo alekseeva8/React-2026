@@ -23,14 +23,11 @@ export const loginSlice = createSlice({
             state.value.values.password = action.payload;
             state.value.touched.password = true;
         },
-        reset: (state, action: PayloadAction<LoginForm>) => {
-            state.value = action.payload
-        },
     },
 }
 )
 
 // Функция действия генерируется на каждую функцию reducer, определённую в createSlice
-export const { updateEmail, updatePassword, reset } = loginSlice.actions
+export const { updateEmail, updatePassword } = loginSlice.actions
 
 export default loginSlice.reducer
