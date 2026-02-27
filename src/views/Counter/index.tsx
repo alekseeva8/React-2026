@@ -4,44 +4,35 @@
  */
 
 import React from "react";
-import * as styles from './styles';
-import { Button } from '@progress/kendo-react-buttons';
+import * as styles from "./styles";
+import { Button } from "@progress/kendo-react-buttons";
 
 export type CounterProps = {
-    count: number;
-    onIncrement: () => void;
-    onDecrement: () => void;
-    onReset: () => void;
-}
+  count: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+  onReset: () => void;
+};
 
 const Counter = ({ count, onIncrement, onDecrement, onReset }: CounterProps) => {
-
-    return (
-        <>
-            <div style={styles.counterContainer}>
-                <p style={styles.counterText}>
-                    Counter state: {count}
-                </p>
-                <div style={styles.buttonsContainer}>
-                    <Button
-                        onClick={onIncrement}
-                        {...styles.incrementButton}>
-                        Increment
-                    </Button>
-                    <Button
-                        onClick={onDecrement}
-                        {...styles.decrementButton}>
-                        Decrement
-                    </Button>
-                    <Button
-                        onClick={onReset}
-                        {...styles.resetButton}>
-                        Reset
-                    </Button>
-                </div>
-            </div>
-        </>
-    );
-}
+  return (
+    <>
+      <div style={styles.counterContainer}>
+        <p style={styles.counterText}>Counter state: {count}</p>
+        <div style={styles.buttonsContainer}>
+          <Button onClick={onIncrement} {...styles.incrementButton}>
+            Increment
+          </Button>
+          <Button onClick={onDecrement} {...styles.decrementButton}>
+            Decrement
+          </Button>
+          <Button onClick={onReset} {...styles.resetButton}>
+            Reset
+          </Button>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Counter;

@@ -1,11 +1,11 @@
-//файл, содержащий css код, представленный в виде js 
+//файл, содержащий css код, представленный в виде js
 
 import { CSSProperties } from "react";
 
 export const mainContainer: CSSProperties = {
   padding: "1%",
   fontFamily: "'Segoe UI', system-ui, sans-serif",
-  textAlign: "center"
+  textAlign: "center",
 };
 
 export const errorText: CSSProperties = {
@@ -13,4 +13,3 @@ export const errorText: CSSProperties = {
   fontWeight: "500",
   color: "#2d3748",
 };
-

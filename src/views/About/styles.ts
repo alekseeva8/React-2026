@@ -9,7 +9,7 @@ export const heading: CSSProperties = {
   fontSize: "3rem",
   fontWeight: "500",
   color: "#1259a5",
-  textAlign: "center"
+  textAlign: "center",
 };
 
 export const text: CSSProperties = {
