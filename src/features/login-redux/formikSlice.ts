@@ -6,25 +6,24 @@ import * as constants from "../../shared/constants/index";
 // которая следит за изменениями в "черновом state" и создает новое
 // неизменное состояние на основе этих изменений
 
+export type LoginData = {
+  email: string;
+  password: string;
+};
 
-export const loginSlice = createSlice({
-  name: "loginForm",
+export const formikSlice = createSlice({
+  name: "formikForm",
   initialState: {
-    value: constants.formInitialState,
+    value: constants.loginInitialValues,
   },
   reducers: {
-    updateEmail: (state, action: PayloadAction<string>) => {
-      state.value.values.email = action.payload;
-      state.value.touched.email = true;
-    },
-    updatePassword: (state, action: PayloadAction<string>) => {
-      state.value.values.password = action.payload;
-      state.value.touched.password = true;
+    saveLoginData: (state, action: PayloadAction<LoginData>) => {
+      state.value = action.payload;
     },
   },
 });
 
 // Функция действия генерируется на каждую функцию reducer, определённую в createSlice
-export const { updateEmail, updatePassword } = loginSlice.actions;
+export const { saveLoginData } = formikSlice.actions;
 
-export default loginSlice.reducer;
+export default formikSlice.reducer;

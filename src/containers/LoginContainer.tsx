@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import LoginView, { LoginProps } from "../views/Login/index";
+import * as constants from "../shared/constants/index";
 
 const LoginContainer = () => {
-  const formInitialState = {
-    values: { email: "", password: "" },
-    touched: { email: false, password: false },
-  };
-
-  const [loginForm, setLoginForm] = useState(formInitialState);
+  const [loginForm, setLoginForm] = useState(constants.formInitialState);
 
   const handleEmailChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValues = { ...loginForm.values, email: e.target.value };
@@ -24,7 +20,7 @@ const LoginContainer = () => {
   const handleLogin = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(`Email ${loginForm.values.email}; Password ${loginForm.values.password}`);
-    setLoginForm(formInitialState);
+    setLoginForm(constants.formInitialState);
   };
 
   const props: LoginProps = {

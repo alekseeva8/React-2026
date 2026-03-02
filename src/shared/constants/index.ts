@@ -1,3 +1,6 @@
+import { LoginData } from "../../features/login-redux/formikSlice";
+import { LoginForm } from "../../views/Login";
+
 export const companyInfo = [
   `Мы предлагаем полный спектр решений по автоматизации 
 технической подготовки производства, комплексно решая задачи организации 
@@ -21,3 +24,10 @@ export const companyInfo = [
 Прежде чем принять ответственное решение, узнайте больше о том, как работают системы IPS. 
 Обратитесь в отдел продаж за консультацией и закажите презентацию решений ИНТЕРМЕХ прямо сейчас.`,
 ];
+
+export const loginInitialValues: LoginData = { email: "", password: "" };
+
+export const formInitialState: LoginForm = {
+  values: loginInitialValues,
+  touched: { email: false, password: false },
+};

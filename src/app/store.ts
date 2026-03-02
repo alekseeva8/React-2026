@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import loginReducer from "../features/login-redux/loginSlice";
+import formikReducer from "../features/login-redux/formikSlice";
 
 export const store = configureStore({
   reducer: {
     loginForm: loginReducer,
+    formikForm: formikReducer,
   },
 });
 

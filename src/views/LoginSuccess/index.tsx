@@ -1,17 +1,20 @@
 import React, { useEffect } from "react";
-import { useAppSelector } from "../../app/hooks";
 import * as styles from "./styles";
+import { LoginData } from "../../features/login-redux/formikSlice";
 
-const LoginSuccessView = () => {
-  const loginForm = useAppSelector((state) => state.loginForm.value);
+export type LoginSuccessProps = {
+  loginData: LoginData;
+  message: string;
+};
 
+const LoginSuccessView = ({ loginData, message }: LoginSuccessProps) => {
   useEffect(() => {
-    console.log(`Email ${loginForm.values.email}; Password ${loginForm.values.password}`);
+    console.log(`Email ${loginData.email}; Password ${loginData.password}`);
   }, []);
 
   return (
     <div style={styles.mainContainer}>
-      <p style={styles.message}>Успешный вход с помощью redux!</p>
+      <p style={styles.message}>{message}</p>
     </div>
   );
 };

@@ -8,6 +8,7 @@ const HomeContainer = () => {
     { title: "Счетчики", path: "/counters" },
     { title: "Войти", path: "/login" },
     { title: "Войти c помощью redux", path: "/login-redux" },
+    { title: "Войти c помощью formik", path: "/login-formik" },
   ];
 
   const location = useLocation();
