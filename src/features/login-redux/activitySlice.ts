@@ -26,13 +26,13 @@ export const activitySlice = createSlice({
   },
   reducers: {
     fetchRequested: (state) => {
-        state.value = {...constants.activityInitialState, loading: true};
+      state.value = { ...constants.activityInitialState, loading: true };
     },
     fetchSucceeded: (state, action: PayloadAction<ActivityData>) => {
-        state.value = {...constants.activityInitialState, data: action.payload};
+      state.value = { ...constants.activityInitialState, data: action.payload };
     },
     fetchFailed: (state, action: PayloadAction<string>) => {
-      state.value = {...constants.activityInitialState, error: action.payload};
+      state.value = { ...constants.activityInitialState, error: action.payload };
     },
   },
 });

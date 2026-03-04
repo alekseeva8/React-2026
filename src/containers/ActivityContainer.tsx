@@ -10,7 +10,7 @@ const ActivityContainer = () => {
 
   const handleRequest = () => {
     const id = 1;
-    dispatch({type: fetchRequested.type, payload: {id}});
+    dispatch({ type: fetchRequested.type, payload: { id } });
   };
 
   const props: RequestProps = {

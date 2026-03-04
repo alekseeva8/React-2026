@@ -16,18 +16,19 @@ const ActivityView = ({ activity, onRequestActivity }: RequestProps) => {
     onRequestActivity();
   }, []);
 
-    return (
+  return (
     <>
       <div style={styles.mainContainer}>
-        {loading ? <h3>Loading...</h3> : 
-        error ? <h3>{`Error: ${error}`}</h3> :
-        activityData ?          
-         <>
+        {loading ? (
+          <h3>Loading...</h3>
+        ) : error ? (
+          <h3>{`Error: ${error}`}</h3>
+        ) : activityData ? (
+          <>
             <h3>{activityData?.title}</h3>
             <p>{activityData?.body}</p>
-          </> 
-          : null
-      }
+          </>
+        ) : null}
       </div>
     </>
   );

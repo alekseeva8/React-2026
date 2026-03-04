@@ -38,4 +38,3 @@ export const activityInitialState: Activity = {
   error: undefined,
   loading: false,
 };
-

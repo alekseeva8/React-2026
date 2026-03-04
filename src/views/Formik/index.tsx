@@ -1,18 +1,14 @@
-import React, { CSSProperties } from "react";
-import { Formik, Form, useField } from "formik";
+import React from "react";
+import { Formik, Form } from "formik";
 import * as styles from "./styles";
 import * as functions from "../../shared/functions/index";
 import { LoginData } from "../../features/login-redux/formikSlice";
 import * as constants from "../../shared/constants/index";
-
+import { TextField } from "./textField";
+import { Description } from "./description";
 
 type FormikLoginProps = {
   onLogin: (values: LoginData) => void;
-};
-
-type TextFieldStyle = {
-  inputContainer: CSSProperties;
-  errorMassage: CSSProperties;
 };
 
 const validate = (values: LoginData) => {
@@ -67,25 +63,3 @@ const FormikView = ({ onLogin }: FormikLoginProps) => {
 };
 
 export default FormikView;
-
-const TextField = (props: { label: string; name: string; type: string; style: TextFieldStyle }) => {
-  const [field, meta] = useField(props.name); // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  return (
-    <div style={styles.inputContainer}>
-      <label htmlFor={props.name}>{props.label}</label>
-      <input id={props.name} type={props.type} {...field} />
-      {meta.touched && meta.error ? <div style={styles.errorMassage}>{meta.error}</div> : null}
-    </div>
-  );
-};
-
-const Description = (props: { label: string; name: string; type: string }) => {
-  const [field] = useField(props);
-  return (
-    <div>
-      <p>
-        {props.label}: {field.value}
-      </p>
-    </div>
-  );
-};

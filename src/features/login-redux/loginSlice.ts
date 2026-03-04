@@ -6,7 +6,6 @@ import * as constants from "../../shared/constants/index";
 // которая следит за изменениями в "черновом state" и создает новое
 // неизменное состояние на основе этих изменений
 
-
 export const loginSlice = createSlice({
   name: "loginForm",
   initialState: {
