@@ -9,6 +9,7 @@ const HomeContainer = () => {
     { title: "Войти", path: "/login" },
     { title: "Войти c помощью redux", path: "/login-redux" },
     { title: "Войти c помощью formik", path: "/login-formik" },
+    { title: "Получить новую активность", path: "/get-activity-saga" },
   ];
 
   const location = useLocation();

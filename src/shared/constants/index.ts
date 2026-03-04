@@ -1,5 +1,6 @@
 import { LoginData } from "../../features/login-redux/formikSlice";
 import { LoginForm } from "../../views/Login";
+import { Activity } from "../../features/login-redux/activitySlice";
 
 export const companyInfo = [
   `Мы предлагаем полный спектр решений по автоматизации 
@@ -31,3 +32,10 @@ export const formInitialState: LoginForm = {
   values: loginInitialValues,
   touched: { email: false, password: false },
 };
+
+export const activityInitialState: Activity = {
+  data: undefined,
+  error: undefined,
+  loading: false,
+};
+
