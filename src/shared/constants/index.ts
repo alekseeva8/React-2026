@@ -27,10 +27,11 @@ export const companyInfo = [
 ];
 
 export const loginInitialValues: LoginData = { email: "", password: "" };
+export const touchInitialValues = { email: false, password: false };
 
 export const formInitialState: LoginForm = {
   values: loginInitialValues,
-  touched: { email: false, password: false },
+  touched: touchInitialValues,
 };
 
 export const activityInitialState: Activity = {

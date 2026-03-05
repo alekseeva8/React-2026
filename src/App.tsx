@@ -11,6 +11,8 @@ import LoginSuccessContainer from "./containers/LoginSuccessContainer";
 import FormikLoginContainer from "./containers/FormikLoginContainer";
 import FormikSuccessContainer from "./containers/FormikSuccessContainer";
 import ActivityContainer from "./containers/ActivityContainer";
+import MSTLoginContainer from "./containers/MSTLoginContainer";
+import MSTSuccessContainer from "./containers/MSTSuccessContainer";
 
 export default function App() {
   return (
@@ -24,11 +26,13 @@ export default function App() {
           <Route path="login-redux" element={<ReduxLoginContainer />} />
           <Route path="login-formik" element={<FormikLoginContainer />} />
           <Route path="get-activity-saga" element={<ActivityContainer />} />
+          <Route path="login-mst" element={<MSTLoginContainer />} />
         </Route>
         <Route path="/404" element={<ErrorContainer />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path="/login-redux/success" element={<LoginSuccessContainer />} />
         <Route path="/login-formik/success" element={<FormikSuccessContainer />} />
+        <Route path="/login-mst/success" element={<MSTSuccessContainer />} />
       </Routes>
     </BrowserRouter>
   );
