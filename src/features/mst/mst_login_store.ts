@@ -1,6 +1,6 @@
 import { types } from "mobx-state-tree";
-import * as constants from "../shared/constants/index";
-import * as functions from "../shared/functions/index";
+import * as constants from "../../shared/constants/index";
+import * as functions from "../../shared/functions/index";
 
 const LoginFormModel = types
   .model({

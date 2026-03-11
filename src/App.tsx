@@ -13,6 +13,7 @@ import FormikSuccessContainer from "./containers/FormikSuccessContainer";
 import ActivityContainer from "./containers/ActivityContainer";
 import MSTLoginContainer from "./containers/MSTLoginContainer";
 import MSTSuccessContainer from "./containers/MSTSuccessContainer";
+import TreeContainer from "./containers/TreeContainer";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="login-formik" element={<FormikLoginContainer />} />
           <Route path="get-activity-saga" element={<ActivityContainer />} />
           <Route path="login-mst" element={<MSTLoginContainer />} />
+          <Route path="tree" element={<TreeContainer />} />
         </Route>
         <Route path="/404" element={<ErrorContainer />} />
         <Route path="*" element={<Navigate to="/404" replace />} />

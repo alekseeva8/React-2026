@@ -1,6 +1,8 @@
 import { LoginData } from "../../features/login-redux/formikSlice";
 import { LoginForm } from "../../views/Login";
 import { Activity } from "../../features/login-redux/activitySlice";
+import { TreeData } from "../../views/Tree";
+import { guid } from "@progress/kendo-react-common";
 
 export const companyInfo = [
   `Мы предлагаем полный спектр решений по автоматизации 
@@ -39,3 +41,25 @@ export const activityInitialState: Activity = {
   error: undefined,
   loading: false,
 };
+
+export const treeInitialData: TreeData[] = [
+  {
+    id: guid(),
+    name: "Объекты",
+    level: 1,
+    opened: false,
+    children: [
+      { id: guid(), name: "Документы", level: 2, opened: false, children: [] },
+      { id: guid(), name: "Роли", level: 2, opened: false, children: [] },
+      {
+        id: guid(),
+        name: "Изделия",
+        level: 2,
+        opened: false,
+        children: [
+          { id: guid(), name: "Прочие изделия", level: 3, opened: false, children: [] }
+        ],
+      },
+    ],
+  },
+];

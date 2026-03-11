@@ -11,6 +11,8 @@ const HomeContainer = () => {
     { title: "Войти c помощью formik", path: "/login-formik" },
     { title: "Получить новую активность", path: "/get-activity-saga" },
     { title: "Войти с помощью MST", path: "/login-mst" },
+    { title: "Дерево", path: "/tree" },
+    
   ];
 
   const location = useLocation();

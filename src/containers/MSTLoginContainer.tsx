@@ -1,5 +1,6 @@
 import React from "react";
-import { loginStore, LoginStoreType } from "../app/mst_store";
+import { observer } from "mobx-react-lite";
+import { loginStore, LoginStoreType } from "../features/mst/mst_login_store";
 import { useNavigate } from "react-router-dom";
 import ObservableLoginView from "../views/MSTLogin/index";
 
@@ -10,7 +11,7 @@ export type MSTLoginProps = {
   onLogin: (e: React.SubmitEvent<HTMLFormElement>) => void;
 };
 
-const MSTLoginContainer = () => {
+const MSTLoginContainer = observer(() => {
   const navigate = useNavigate();
 
   const handleEmailChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +35,6 @@ const MSTLoginContainer = () => {
   };
 
   return <ObservableLoginView {...props} />;
-};
+});
 
 export default MSTLoginContainer;

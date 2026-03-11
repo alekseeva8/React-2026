@@ -1,7 +1,7 @@
 import React from "react";
 import LoginSuccessView from "../views/LoginSuccess/index";
 import { Navigate, useLocation } from "react-router-dom";
-import { loginStore } from "../app/mst_store";
+import { loginStore } from "../features/mst/mst_login_store";
 
 const MSTSuccessContainer = () => {
   const location = useLocation();
