@@ -12,12 +12,8 @@ const LoginSuccessContainer = () => {
 
   const loginForm = useAppSelector((state) => state.loginForm.value);
   const message = "Успешный вход с помощью redux!";
-  const props = {
-    loginData: loginForm.values,
-    message: message,
-  };
 
-  return <LoginSuccessView {...props} />;
+  return <LoginSuccessView loginData={loginForm.values} message={message} />;
 };
 
 export default LoginSuccessContainer;

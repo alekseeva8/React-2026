@@ -8,8 +8,12 @@ const TreeView = observer((props: TreeItemProps) => (
   <>
     <div style={styles.mainContainer}>
       <div style={styles.flexContainer}>
-      <ul style={styles.list}>{props.treeItems.map((item) => <TreeNode key={item.id} node={item} onRoll={props.onRoll} />)}</ul>
-      <h2 style={styles.header}>{props.lastOpenedItemName}</h2> 
+        <ul style={styles.list}>
+          {props.treeItems.map((item) => (
+            <TreeNode key={item.id} node={item} onRoll={props.onRoll} />
+          ))}
+        </ul>
+        <h2 style={styles.header}>{props.lastOpenedItemName}</h2>
       </div>
     </div>
   </>

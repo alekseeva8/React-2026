@@ -3,7 +3,7 @@ import * as constants from "../../shared/constants/index";
 import * as functions from "../../shared/functions/index";
 
 const LoginFormModel = types
-  .model({
+  .model("LoginFormModel", {
     values: types.model(constants.formInitialState.values),
     touched: types.model(constants.formInitialState.touched),
   })

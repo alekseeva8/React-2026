@@ -11,11 +11,12 @@ export type ItemProps = {
   onRoll: (e: MouseEvent<HTMLButtonElement>, id: string) => void;
 };
 
-const ItemView = observer(({id, name, isOpened, hasChildren, onRoll}: ItemProps) => (
+const ItemView = observer(({ id, name, isOpened, hasChildren, onRoll }: ItemProps) => (
   <>
     <div>
-      {hasChildren && <Button onClick={(e) => onRoll(e, id)} {...styles.getRollButtonStyle(isOpened)}>
-      </Button>}
+      {hasChildren && (
+        <Button onClick={(e) => onRoll(e, id)} {...styles.getRollButtonStyle(isOpened)}></Button>
+      )}
       <span style={styles.spanStyle(hasChildren)}>{name}</span>
     </div>
   </>

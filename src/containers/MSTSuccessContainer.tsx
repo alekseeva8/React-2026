@@ -11,12 +11,8 @@ const MSTSuccessContainer = () => {
   }
 
   const message = "Успешный вход с помощью MST!";
-  const props = {
-    loginData: loginStore.values,
-    message: message,
-  };
 
-  return <LoginSuccessView {...props} />;
+  return <LoginSuccessView loginData={loginStore.values} message={message} />;
 };
 
 export default MSTSuccessContainer;

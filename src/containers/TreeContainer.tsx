@@ -2,7 +2,7 @@ import React, { MouseEvent } from "react";
 import { observer } from "mobx-react-lite";
 import { treeStore } from "../features/mst/mst_tree_store";
 import TreeView from "../views/Tree";
-import { TreeData } from "../views/Tree/treeNode";
+import { TreeData } from "../shared/types";
 
 export type TreeItemProps = {
   treeItems: TreeData[];
@@ -11,7 +11,7 @@ export type TreeItemProps = {
 };
 
 const TreeContainer = observer(() => {
-  const handleRoll = (e : MouseEvent<HTMLButtonElement>, id: string) => {
+  const handleRoll = (e: MouseEvent<HTMLButtonElement>, id: string) => {
     treeStore.toggleItem(id);
   };
 

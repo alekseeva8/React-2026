@@ -3,14 +3,7 @@ import { observer } from "mobx-react-lite";
 import ItemView from "./itemView";
 import * as styles from "../Tree/styles";
 import { ItemProps } from "./itemView";
-
-export type TreeData = {
-  id: string;
-  name: string;
-  level: number;
-  opened: boolean;
-  children: TreeData[];
-};
+import { TreeData } from "../../shared/types";
 
 type TreeNodeProps = {
   node: TreeData;
@@ -18,7 +11,7 @@ type TreeNodeProps = {
 };
 
 const TreeNode = observer(({ node, onRoll }: TreeNodeProps) => {
-  const hasChildren = Boolean(node.children.length);
+  const hasChildren = node.children.length > 0;
 
   const itemProps: ItemProps = {
     id: node.id,

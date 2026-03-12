@@ -11,12 +11,8 @@ const FormikSuccessContainer = () => {
 
   const loginData = useAppSelector((state) => state.formikForm.value);
   const message = "Успешный вход с помощью formik!";
-  const props = {
-    loginData: loginData,
-    message: message,
-  };
 
-  return <LoginSuccessView {...props} />;
+  return <LoginSuccessView loginData={loginData} message={message} />;
 };
 
 export default FormikSuccessContainer;

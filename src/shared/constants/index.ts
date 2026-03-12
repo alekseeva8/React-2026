@@ -1,7 +1,7 @@
 import { LoginData } from "../../features/login-redux/formikSlice";
 import { LoginForm } from "../../views/Login";
 import { Activity } from "../../features/login-redux/activitySlice";
-import { TreeData } from "../../views/Tree";
+import { TreeData } from "../types";
 import { guid } from "@progress/kendo-react-common";
 
 export const companyInfo = [
@@ -56,9 +56,7 @@ export const treeInitialData: TreeData[] = [
         name: "Изделия",
         level: 2,
         opened: false,
-        children: [
-          { id: guid(), name: "Прочие изделия", level: 3, opened: false, children: [] }
-        ],
+        children: [{ id: guid(), name: "Прочие изделия", level: 3, opened: false, children: [] }],
       },
     ],
   },

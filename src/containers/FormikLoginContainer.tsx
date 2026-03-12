@@ -13,11 +13,7 @@ const FormikLoginContainer = () => {
     navigate("/login-formik/success", { state: { fromFormikLogin: true } });
   };
 
-  const props = {
-    onLogin: handleLogin,
-  };
-
-  return <FormikView {...props} />;
+  return <FormikView onLogin={handleLogin} />;
 };
 
 export default FormikLoginContainer;
